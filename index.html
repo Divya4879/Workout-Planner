@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Workout Planner</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <header class="header-img">
+        <img src="images/header-img.jpg" alt="Workout Planner Header Image">
+    </header>
+    <div class="container">
+        <h1>AI Workout Planner</h1>
+        <h2>Your personalized AI-powered workout planner for achieving fitness goals</h2>
+        <form id="workoutForm">
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required min="18" max="100">
+
+            <label for="height">Height (cm):</label>
+            <input type="number" id="height" name="height" required min="100" max="250" placeholder="e.g., 170">
+
+            <label for="currentWeight">Current Weight (kg):</label>
+            <input type="number" id="currentWeight" name="currentWeight" required min="30" max="300" step="0.1">
+
+            <label for="targetWeight">Target Weight (kg):</label>
+            <input type="number" id="targetWeight" name="targetWeight" required min="30" max="300" step="0.1">
+
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="">Select gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+
+            <label for="bodyType">Body Type:</label>
+            <select id="bodyType" name="bodyType" required>
+                <option value="">Select body type</option>
+                <option value="ectomorph">Ectomorph</option>
+                <option value="mesomorph">Mesomorph</option>
+                <option value="endomorph">Endomorph</option>
+            </select>
+
+            <label for="workoutLevel">Workout Level:</label>
+            <select id="workoutLevel" name="workoutLevel" required>
+                <option value="">Select workout level</option>
+                <option value="beginner">Beginner</option>
+                <option value="intermediate">Intermediate</option>
+                <option value="advanced">Advanced</option>
+            </select>
+
+            <label for="workoutTime">Time Devoted Daily to Workouts (minutes):</label>
+            <input type="number" id="workoutTime" name="workoutTime" required min="15" max="180">
+
+            <label for="warmupCooldown">Include Warmup & Cooldown:</label>
+            <select id="warmupCooldown" name="warmupCooldown" required>
+                <option value="">Select option</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+
+            <label for="challengeWeeks">Number of Weeks for Workout Challenge:</label>
+            <select id="challengeWeeks" name="challengeWeeks" required>
+                <option value="">Select number of weeks</option>
+                <option value="1">1 week</option>
+                <option value="2">2 weeks</option>
+                <option value="3">3 weeks</option>
+                <option value="4">4 weeks</option>
+            </select>
+
+            <label for="bodyGoals">Body Goals:</label>
+            <textarea id="bodyGoals" name="bodyGoals" rows="3" required placeholder="E.g., reduce body fat, build muscle, improve cardiovascular fitness"></textarea>
+
+            <label for="otherGoals">Other Goals:</label>
+            <textarea id="otherGoals" name="otherGoals" rows="3" placeholder="E.g., improve flexibility, increase strength, enhance endurance"></textarea>
+
+            <label for="equipment">Equipment Available:</label>
+            <textarea id="equipment" name="equipment" rows="3" required placeholder="E.g., dumbbells, resistance bands, yoga mat, or 'None' for bodyweight only"></textarea>
+
+            <label for="exerciseRestrictions">Exercise Restrictions:</label>
+            <textarea id="exerciseRestrictions" name="exerciseRestrictions" rows="3" placeholder="List any exercises you cannot perform, or enter 'None'"></textarea>
+
+            <div class="button-container">
+                <button type="submit">Generate Workout Plan</button>
+            </div>
+        </form>
+
+        <div id="result"></div>
+        <div class="button-container">
+            <button id="downloadPdf" style="display: none;">Download as PDF</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
