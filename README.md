@@ -2,7 +2,16 @@
 
 The AI Workout Planner is a web-based application designed to create personalized, progressive workout plans tailored to an individual's fitness goals, body parameters, and available equipment. Leveraging AI capabilities, this planner ensures variety, safety, and progression in every workout.
 
+## Live
+
+This website is live for your use at:- https://divya4879.github.io/Workout-Planner
+
+## Preview:-
+
+![screencapture-divya4879-github-io-Workout-Planner-2024-12-25-01_08_01](https://github.com/user-attachments/assets/ddd0590b-d2aa-43ce-b795-5d3ac77463e1)
+
 ## Features
+
 - **Personalized Plans:** Workout plans based on height, weight, body type, goals, and restrictions.
 - **Progressive Workouts:** Intensity and difficulty increase weekly to ensure consistent improvement.
 - **User-Friendly Interface:** Modern design with easy-to-use forms.
