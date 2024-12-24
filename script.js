@@ -22,12 +22,13 @@ document.getElementById('workoutForm').addEventListener('submit', async (e) => {
 document.getElementById('downloadPdf').addEventListener('click', generatePDF);
 
 async function generateWorkoutPlan(formValues) {
-    const prompt = `Create a detailed, progressive ${formValues.challengeWeeks}-week personalized workout plan for a ${formValues.age}-year-old ${formValues.gender} with ${formValues.bodyType} body type, ${formValues.workoutLevel} fitness level. Current weight: ${formValues.currentWeight}kg, target: ${formValues.targetWeight}kg. 5 workout days per week, ${formValues.workoutTime} minutes per session. 
+    const prompt = `Remember that you're a globally renowned fitness trainer, who has helped countless celebrities, models, artists, idols, sportspersons, weightlifters, and people from all walks of life. Create a detailed, progressive ${formValues.challengeWeeks}-week personalized workout plan for a ${formValues.age}-year-old ${formValues.gender} with ${formValues.bodyType} body type, ${formValues.workoutLevel} fitness level. Current weight: ${formValues.currentWeight}kg, target: ${formValues.targetWeight}kg. 5 workout days per week, ${formValues.workoutTime} minutes per session. 
 
 Primary goals: ${formValues.bodyGoals}
 Secondary goals: ${formValues.otherGoals}
 Available equipment: ${formValues.equipment}
 Exercise restrictions: ${formValues.exerciseRestrictions}
+Exercise that must be in the plan: ${formValues.exerciseMust}
 
 Include warmup (${formValues.warmupCooldown === 'yes' ? 'Yes' : 'No'}) and cooldown (${formValues.warmupCooldown === 'yes' ? 'Yes' : 'No'}).
 
@@ -45,11 +46,15 @@ For each week:
         * Rest periods
         * Detailed form cues and tips
         * Equipment needed (if any)
-        * Intensity level (e.g., RPE 7/10)
+        
    c. Cooldown routine (if applicable):
       - List 3-4 specific stretches with durations
 
-Ensure progressive overload by increasing reps, sets, or difficulty of exercises each week. Address all user goals throughout the program. Customize exercises based on available equipment and restrictions.
+   d. If the workout has warmup & cooldown included, total workout time will be ${formValues.workoutTime} - time needed for warmup & cooldown(5-10 mins)
+
+   e. The exercise(s) in ${formValues.exerciseMust} must be there in the plan- you can even include multiple variations of them in the main workout(ex- if it's plank, include elbow plank, side plank, plank crunches, reverse plank etc.)
+
+Ensure progressive overload by increasing reps, sets, or difficulty of exercises each week. Address all user goals throughout the program. Customize exercises based on available equipment and restrictions.The time of the main workout must remain the same, increase the exerises' intensity.
 
 Format with ** ** for important headings (e.g., **Week 1**, **Monday - Full Body Strength**).`;
 
@@ -62,10 +67,10 @@ Format with ** ** for important headings (e.g., **Week 1**, **Monday - Full Body
             body: JSON.stringify({
                 contents: [{ parts: [{ text: prompt }] }],
                 generationConfig: {
-                    temperature: 0.7,
-                    topK: 40,
-                    topP: 0.95,
-                    maxOutputTokens: 8192,
+                    temperature: 0.5,
+                    topK: 30,
+                    topP: 0.75,
+                    maxOutputTokens: 9600,
                 },
             })
         });
