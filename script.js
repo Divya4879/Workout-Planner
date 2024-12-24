@@ -36,7 +36,7 @@ Provide a single, comprehensive full-body warmup routine to be used for all work
 
 For each week:
 1. Provide a detailed weekly overview highlighting progression and focus areas.
-2. For each workout day (5 days per week):
+2. For each workout day (6 days per week):
    a. Specify the day of the week and main focus (e.g., "Monday - Full Body Strength")
    b. Main workout (${formValues.workoutTime} minutes):
       - Workout structure (e.g., circuit, HIIT, strength training)
@@ -53,6 +53,10 @@ For each week:
    d. If the workout has warmup & cooldown included, total workout time will be ${formValues.workoutTime} - time needed for warmup & cooldown(5-10 mins)
 
    e. The exercise(s) in ${formValues.exerciseMust} must be there in the plan- you can even include multiple variations of them in the main workout(ex- if it's plank, include elbow plank, side plank, plank crunches, reverse plank etc.)
+
+   f. Active Rest Day or Steady State Cardio- can include swimming/dancing/pilates/jogging/sun-salutations/running/kickboxing,etc.
+
+   g. If you're stating just steady-state cardio, active rest for a day's plan, then give the exact activity(activities) as well, could be jogging for 30 mins, dancing for 30 mins, whatever.
 
 Ensure progressive overload by increasing reps, sets, or difficulty of exercises each week. Address all user goals throughout the program. Customize exercises based on available equipment and restrictions.The time of the main workout must remain the same, increase the exerises' intensity.
 
